@@ -1,5 +1,5 @@
 # resha
-a game
+a game  
 [![Greenkeeper badge](https://badges.greenkeeper.io/amir-arad/resha.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/amir-arad/resha.svg?branch=master)](https://travis-ci.org/amir-arad/resha)
 
