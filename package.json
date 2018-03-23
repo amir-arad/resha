@@ -1,0 +1,59 @@
+{
+  "name": "resha",
+  "version": "0.0.1",
+  "description": "Generic project boilerplate for TypeScript",
+  "author": "Amir Arad (greenshade@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amir-arad/resha/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:amir-arad/resha.git"
+  },
+  "files": [
+    "dist/src"
+  ],
+  "homepage": "https://github.com/amir-arad/resha#readme",
+  "keywords": [
+    "typescript",
+    "tdd"
+  ],
+  "main": "dist/src/index.js",
+  "scripts": {
+    "build": "rimraf dist && tsc -d",
+    "test": "run-s test:node test:browser | tap-merge | tap-set-exit",
+    "test:node": "ts-node node_modules/tape/bin/tape \"test/**/*.spec.ts?(x)\"",
+    "test:browser": "node ./scripts/browser-test.js | tape-run",
+    "start:dev": "node ./scripts/dev-serve.js",
+    "start": "budo test/browser-env.ts test/*.spec.ts -s=test.bundle --live -p 8080 -- --debug -p [ browserify-hmr ] -p [ tsify ]"
+  },
+  "devDependencies": {
+    "@types/sinon": "4.3.0",
+    "@types/tape": "4.2.32",
+    "browserify": "16.1.1",
+    "browserify-hmr": "0.3.6",
+    "browserify-middleware": "8.1.0",
+    "budo": "11.2.0",
+    "cross-var": "1.1.0",
+    "express": "4.16.3",
+    "glob": "7.1.2",
+    "npm-run-all": "4.1.2",
+    "rimraf": "2.6.2",
+    "simple-html-index": "1.5.0",
+    "sinon": "4.4.6",
+    "tap-colorize": "1.2.0",
+    "tap-merge": "0.3.1",
+    "tap-set-exit": "1.1.1",
+    "tape": "4.9.0",
+    "tape-run": "3.0.4",
+    "tape-worm": "0.0.3",
+    "ts-node": "^5.0.1",
+    "tsify": "3.0.4",
+    "typescript": "2.7.2",
+    "watchify": "3.11.0"
+  },
+  "dependencies": {
+    "tslib": "~1.9.0"
+  }
+}
