@@ -1,4 +1,4 @@
-import { Response, Request} from "express";
+import {Request, Response} from "express";
 import {serve} from "../src/server";
 import rootPath from '../src/pkg-root';
 
@@ -8,8 +8,6 @@ const path = require("path");
 const browserify = require('browserify-middleware');
 const express = require('express');
 const glob = require("glob");
-const defaultIndex = require('simple-html-index');
-
 
 const browserTestFiles = [path.resolve(rootPath, "test", "browser-env.ts"), ...glob.sync(path.resolve(rootPath, "test", "*.spec.ts"))];
 
@@ -20,17 +18,20 @@ browserify.settings({
     plugins: [{
         plugin: tsify,
         options: {
-       //     files: []
+            //     files: []
         }
     }/*, {plugin: bhmr, options: {}}*/]
 });
 
 // magic html for test:
 app.get('/test', (req: Request, res: Response) => {
-    // TODO: on HMR, tests needs to re-run and tapeworm should show it
-    res.setHeader('content-type', 'text/html');
-    // TODO: simply write HTML like src/server does
-    defaultIndex({entry: 'test.js'}).pipe(res);
+    res.send(`<!DOCTYPE html>
+<html>
+  <body>  
+       <script type="text/javascript" src="test.js"></script>
+   </body>
+</html>
+`);
 });
 // code for test
 app.use('/test.js', browserify([
@@ -38,7 +39,7 @@ app.use('/test.js', browserify([
 ]));
 
 // code for client
-app.get('/client.bundle.js', browserify(path.resolve(rootPath, "src", "client.ts")));
+app.get('/client.live.js', browserify(path.resolve(rootPath, "src", "client.ts")));
 
 
-serve(app, 8080, 'client.bundle.js');
+serve(app, 8080, 'client.live.js');

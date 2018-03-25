@@ -23,12 +23,11 @@ how to debug (browser):
  - open `http://localhost:8080/` to run live browser tests that will update while you change the source code
  
  or:
- 
- - run `npm start:dev` to run a develompent server
+  - run `npm start:dev` to run a develompent server
   - open `http://localhost:8080/` to run live browser game that will update while you change the source code
   - open `http://localhost:8080/test` to run live browser tests that will update while you change the source code
 
- or: 
- 
- - run `npm start` to run a production server
-  - open `http://localhost:8080/` to run browser game 
+ how to build and run for production: 
+  - run `npm run build` to build a production client
+  - run `npm start` to run a production server. in some systems you'll need to `sudo` this command.
+  - open `http://localhost/` to run browser game 

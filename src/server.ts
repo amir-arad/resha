@@ -24,13 +24,6 @@ export function serve(app: Express, port: number, clinetPath: string) {
         custom_options: "you can use me on Room#onInit"
     });
 //
-// // Register StateHandlerRoom as "state_handler"
-// gameServer.register("state_handler", StateHandlerRoom);
-//
-// // Register StateHandlerRoom as "state_handler"
-// gameServer.register("auth", AuthRoom);
-
-// magic html for test:
     app.get('/', (req, res) => {
         res.send(`<!DOCTYPE html>
 <html>
