@@ -50,7 +50,7 @@
     "tape": "4.9.0",
     "tape-run": "3.0.4",
     "tape-worm": "0.0.3",
-    "ts-node": "^5.0.1",
+    "ts-node": "^6.0.0",
     "tsify": "4.0.0",
     "typescript": "2.7.2",
     "watchify": "3.11.0"
