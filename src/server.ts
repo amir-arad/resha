@@ -4,8 +4,8 @@ import {Express} from 'express';
 import {createServer} from 'http';
 import {Server} from 'colyseus';
 // Require BasicRoom handler
-import {BasicRoom} from "./model";
 import rootPath from './pkg-root';
+import {SpaceRoom} from "./control/space-room";
 
 
 export function serve(app: Express, port: number, clinetPath: string) {
@@ -16,14 +16,10 @@ export function serve(app: Express, port: number, clinetPath: string) {
     const gameServer = new Server({server: httpServer});
 
 // Register BasicRoom as "basic"
-    gameServer.register("basic", BasicRoom);
-
-// Register BasicRoom with initial options, as "basic_with_options"
-// onInit(options) will receive client join options + options registered here.
-    gameServer.register("basic_with_options", BasicRoom, {
+    gameServer.register("space", SpaceRoom, {
         custom_options: "you can use me on Room#onInit"
     });
-//
+
     app.get('/', (req, res) => {
         res.send(`<!DOCTYPE html>
 <html>
@@ -40,14 +36,7 @@ export function serve(app: Express, port: number, clinetPath: string) {
 
   </head>
   <body>
-    <strong>Messages</strong><br>
-
-    <form id="form">
-      <input type="text" id="input" value="" />
-      <input type="submit" value="send" />
-    </form>
-
-    <div id="messages"></div>
+    <div id="resha"></div>
   </body>
 </html>
 `);

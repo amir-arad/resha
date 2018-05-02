@@ -39,7 +39,7 @@ app.use('/test.js', browserify([
 ]));
 
 // code for client
-app.get('/client.live.js', browserify(path.resolve(rootPath, "src", "client.ts")));
+app.get('/client.live.js', browserify(path.resolve(rootPath, "src", "client.tsx")));
 
 
 serve(app, 8080, 'client.live.js');

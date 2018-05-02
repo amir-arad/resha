@@ -24,7 +24,7 @@
   ],
   "main": "dist/src/index.js",
   "scripts": {
-    "build": "browserify src/client.ts -p [ tsify ] -o=static/client.js",
+    "build": "browserify src/client.tsx -p [ tsify ] -o=static/client.js",
     "test": "run-s test:node test:browser | tap-merge | tap-set-exit",
     "test:node": "ts-node node_modules/tape/bin/tape \"test/**/*.spec.ts?(x)\"",
     "test:browser": "node ./scripts/browser-test.js | tape-run",
@@ -34,6 +34,8 @@
   },
   "devDependencies": {
     "@types/express": "4.11.1",
+    "@types/react": "16.1.0",
+    "@types/react-dom": "16.0.4",
     "@types/sinon": "4.3.0",
     "@types/tape": "4.2.32",
     "browserify": "16.1.1",
@@ -56,10 +58,15 @@
     "watchify": "3.11.0"
   },
   "dependencies": {
+    "@gamestdio/keycode": "2.0.0",
     "colyseus": "^0.8.11",
     "colyseus.js": "^0.8.0",
     "express": "4.16.3",
     "pkg-dir": "2.0.0",
-    "tslib": "~1.9.0"
+    "react": "16.3.0",
+    "react-dom": "16.3.0",
+    "react-key-handler": "1.0.1",
+    "tslib": "~1.9.0",
+    "uws": "9.14.0"
   }
 }

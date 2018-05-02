@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
     "lib": [
-      "es2015",
+      "es2017",
       "dom"
     ],
+    "jsx": "react",
     "module": "commonjs",
     "target": "es5",
     "strict": true,

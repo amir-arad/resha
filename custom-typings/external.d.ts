@@ -1,5 +1,7 @@
 declare module 'tape-worm';
 
+declare module 'react-key-handler';
+
 declare module 'browserify-middleware';
 
 declare module 'simple-html-index' {
