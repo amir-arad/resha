@@ -19,11 +19,11 @@ how to build and test:
  - run `npm test` to build and test the code in both nodejs and browser
 
 how to debug (browser):
- - run `npm start:test` to run a tests server
+ - run `npm run start:test` to run a tests server
  - open `http://localhost:8080/` to run live browser tests that will update while you change the source code
  
  or:
-  - run `npm start:dev` to run a develompent server
+  - run `npm run start:dev` to run a develompent server
   - open `http://localhost:8080/` to run live browser game that will update while you change the source code
   - open `http://localhost:8080/test` to run live browser tests that will update while you change the source code
 
