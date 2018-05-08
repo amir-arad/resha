@@ -48,7 +48,7 @@
     "tap-merge": "0.3.1",
     "tap-set-exit": "1.1.1",
     "tape": "4.9.0",
-    "tape-run": "3.0.4",
+    "tape-run": "4.0.0",
     "tape-worm": "0.0.3",
     "ts-node": "^6.0.0",
     "tsify": "4.0.0",
