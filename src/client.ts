@@ -8,12 +8,12 @@ room.onJoin.add(function () {
     console.log("joined");
 });
 
-room.onUpdate.addOnce(function (state: any) {
+room.onStateChange.addOnce(function (state: any) {
     console.log("initial room data:", state);
 });
 
 // new room state
-room.onUpdate.add(function (state: any) {
+room.onStateChange.add(function (state: any) {
     // this signal is triggered on each patch
 });
 
