@@ -36,18 +36,10 @@ export function serve(app: Express, port: number, clinetPath: string) {
     <script>if (typeof(Symbol)==="undefined") { window.Symbol = function(arg) { return arg; } }</script>
 
     <!-- client -->
-    <script type="text/javascript" src="${clinetPath}"></script>
 
   </head>
   <body>
-    <strong>Messages</strong><br>
-
-    <form id="form">
-      <input type="text" id="input" value="" />
-      <input type="submit" value="send" />
-    </form>
-
-    <div id="messages"></div>
+    <script type="text/javascript" src="${clinetPath}"></script>
   </body>
 </html>
 `);
