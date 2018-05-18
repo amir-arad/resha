@@ -1,4 +1,4 @@
-import test = require('tape');
+import test from 'tape'
 
 test('example test', t => {
     t.plan(1);
