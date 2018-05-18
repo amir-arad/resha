@@ -1,5 +1,5 @@
-import test from 'tape'
-import tapeworm from 'tape-worm'
+import * as test from 'tape'
+import * as tapeworm from 'tape-worm'
 
 tapeworm.infect(test);
 
