@@ -2,7 +2,9 @@
 
 const test = require('tape')
 const fs = require('fs')
+const util = require('util')
 const HeadlessChrome = require('simple-headless-chrome')
+const looksSame = util.promisify(require('looks-same'))
 
 const browser = new HeadlessChrome({
   headless: true,
@@ -25,7 +27,7 @@ test('main screen renders cube in center with black background', async function 
     await mainTab.goTo('http://resha')
     await new Promise(resolve => setTimeout(resolve, 1000)) // page should fully load in 1s
     const captured = await mainTab.getScreenshot({}, true)
-    const matchesScreenshot = Buffer.compare(captured, truth) === 0
+    const matchesScreenshot = await looksSame(truth, captured)
     t.ok(matchesScreenshot, 'captured screenshot matches saved screenshot')
     await mainTab.close()
     await browser.close()
