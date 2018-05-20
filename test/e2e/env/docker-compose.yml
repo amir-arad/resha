@@ -4,9 +4,3 @@ services:
     build: ../../..
     ports:
       - "31337:80"
-  client:
-    image: justinribeiro/chrome-headless
-    cap_add:
-      - SYS_ADMIN
-    ports:
-      - "9222:9222"

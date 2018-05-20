@@ -3,33 +3,21 @@
 const test = require('tape')
 const fs = require('fs')
 const util = require('util')
-const HeadlessChrome = require('simple-headless-chrome')
+const puppeteer = require('puppeteer')
 const looksSame = util.promisify(require('looks-same'))
-
-const browser = new HeadlessChrome({
-  headless: true,
-  launchChrome: false,
-  chrome: {
-    host: 'localhost',
-    port: 9222,
-    remote: true
-  },
-  browserlog: true
-})
 
 test('main screen renders cube in center with black background', async function (t: any) {
   t.plan(1)
   try {
-    await browser.init()
-    const mainTab = await browser.newTab({ privateTab: false })
-    const truth = fs.readFileSync(`${__dirname}/../screenshots/main.png`)
+    const browser = await puppeteer.launch({args: ['--no-sandbox']})
+    const page = await browser.newPage()
     await new Promise(resolve => setTimeout(resolve, 1000)) // TODO: fix this
-    await mainTab.goTo('http://resha')
+    await page.goto('http://localhost:31337')
     await new Promise(resolve => setTimeout(resolve, 1000)) // page should fully load in 1s
-    const captured = await mainTab.getScreenshot({}, true)
+    const captured = await page.screenshot()
+    const truth = fs.readFileSync(`${__dirname}/../screenshots/main.png`)
     const matchesScreenshot = await looksSame(truth, captured)
     t.ok(matchesScreenshot, 'captured screenshot matches saved screenshot')
-    await mainTab.close()
     await browser.close()
   } catch (e) {
     t.fail(e.message)

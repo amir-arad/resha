@@ -26,8 +26,8 @@
   "scripts": {
     "watch": "watchify src/client.ts -p [ tsify ] -o=static/client.js",
     "build": "browserify src/client.ts -p [ tsify ] -o=static/client.js",
-    "pretest:e2e": "docker-compose -f test/e2e/env/docker-compose.yml up --build -d && wait-port localhost:31337 && wait-port localhost:9222",
     "test": "run-s test:node test:browser | tap-merge | tap-set-exit",
+    "pretest:e2e": "docker-compose -f test/e2e/env/docker-compose.yml up --build -d && wait-port localhost:31337",
     "test:e2e": "ts-node node_modules/tape/bin/tape test/e2e/cases/*.spec.ts | tap-spec",
     "test:node": "ts-node node_modules/tape/bin/tape \"test/*/*.spec.ts?(x)\"",
     "test:browser": "node ./scripts/browser-test.js | tape-run",
@@ -46,6 +46,7 @@
     "glob": "7.1.2",
     "looks-same": "^3.3.0",
     "npm-run-all": "4.1.3",
+    "puppeteer": "^1.4.0",
     "rimraf": "2.6.2",
     "simple-headless-chrome": "^4.3.10",
     "sinon": "5.0.1",
