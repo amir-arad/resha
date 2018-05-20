@@ -1,5 +1,5 @@
-import test = require('tape')
-import tapeworm = require('tape-worm');
+import * as test from 'tape'
+import * as tapeworm from 'tape-worm'
 
 tapeworm.infect(test);
 

@@ -1,0 +1,6 @@
+version: '2'
+services:
+  resha:
+    build: ../../..
+    ports:
+      - "31337:80"
