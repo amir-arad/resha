@@ -24,9 +24,11 @@
   ],
   "main": "dist/src/index.js",
   "scripts": {
+    "lint": "tslint --project .",
     "watch": "watchify src/client.ts -p [ tsify ] -o=static/client.js",
     "build": "browserify src/client.ts -p [ tsify ] -o=static/client.js",
-    "test": "run-s test:node test:browser | tap-merge | tap-set-exit",
+    "test": "npm run lint && npm run test-only",
+    "test-only": "run-s test:node test:browser | tap-merge | tap-set-exit",
     "pretest:e2e": "npm run build && docker-compose -f ./test/e2e/env/docker-compose.yml up --build -d && wait-port localhost:31337",
     "test:e2e": "ts-node node_modules/tape/bin/tape test/e2e/cases/*.spec.ts | tap-spec",
     "test:node": "ts-node node_modules/tape/bin/tape \"test/*/*.spec.ts?(x)\"",
@@ -59,6 +61,8 @@
     "tape-worm": "0.0.3",
     "ts-node": "^6.0.0",
     "tsify": "4.0.0",
+    "tslint": "^5.10.0",
+    "tslint-config-standard": "^7.0.0",
     "typescript": "2.8.3",
     "wait-port": "^0.2.2",
     "watchify": "^3.11.0"
