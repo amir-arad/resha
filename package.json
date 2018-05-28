@@ -39,6 +39,7 @@
     "@types/express": "4.11.1",
     "@types/sinon": "4.3.3",
     "@types/tape": "4.2.32",
+    "@types/three": "0.92.2",
     "browserify": "16.2.0",
     "browserify-hmr": "0.3.6",
     "browserify-middleware": "8.1.0",
@@ -58,7 +59,7 @@
     "tape-worm": "0.0.3",
     "ts-node": "^6.0.0",
     "tsify": "4.0.0",
-    "typescript": "2.7.2",
+    "typescript": "2.8.3",
     "wait-port": "^0.2.2",
     "watchify": "^3.11.0"
   },
@@ -68,7 +69,6 @@
     "express": "4.16.3",
     "pkg-dir": "2.0.0",
     "three": "^0.92.0",
-    "three-orbit-controls": "^82.1.0",
     "tslib": "~1.9.0"
   }
 }
