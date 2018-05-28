@@ -1,11 +1,10 @@
-import {serve} from "../src/server";
-import rootPath from '../src/pkg-root';
-import {join} from 'path';
-import express = require('express');
+import { serve } from '../src/server'
+import rootPath from '../src/pkg-root'
+import { join } from 'path'
+import express = require('express')
 
-const app = express();
+const app = express()
 
-app.use(express.static(join(rootPath, "static")));
+app.use(express.static(join(rootPath, 'static')))
 
-serve(app, 80, 'client.js');
-
+serve(app, 80, 'client.js')
