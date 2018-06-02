@@ -42,7 +42,7 @@
     "@types/three": "0.92.2",
     "browserify": "16.2.0",
     "browserify-hmr": "0.3.6",
-    "browserify-middleware": "8.1.0",
+    "browserify-middleware": "8.1.1",
     "budo": "11.2.0",
     "glob": "7.1.2",
     "looks-same": "^3.3.0",
