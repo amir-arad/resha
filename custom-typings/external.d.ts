@@ -3,7 +3,7 @@ declare module 'tape-worm';
 declare module 'browserify-middleware';
 
 declare module 'simple-html-index' {
-    import {Readable} from "stream";
+    import {Readable} from 'stream'
     export = createHtml;
 
     interface Options {

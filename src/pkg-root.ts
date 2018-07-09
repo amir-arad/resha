@@ -1,3 +1,2 @@
 
-
-export default require("pkg-dir").sync(__dirname);
+export default require('pkg-dir').sync(__dirname)
