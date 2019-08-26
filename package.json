@@ -68,7 +68,7 @@
     "watchify": "^3.11.0"
   },
   "dependencies": {
-    "colyseus": "^0.9.5",
+    "colyseus": "^0.11.5",
     "colyseus.js": "^0.9.3",
     "express": "4.16.3",
     "pkg-dir": "2.0.0",
