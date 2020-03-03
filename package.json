@@ -38,7 +38,7 @@
     "start:test": "budo test/browser-env.ts test/*.spec.ts -s=test.bundle --live -p 8080 -- --debug -p [ browserify-hmr ] -p [ tsify ]"
   },
   "devDependencies": {
-    "@types/express": "4.11.1",
+    "@types/express": "4.16.0",
     "@types/sinon": "4.3.3",
     "@types/tape": "4.2.32",
     "@types/three": "0.92.12",
